@@ -1,21 +1,26 @@
 import { AppBar, Toolbar, IconButton, Typography, InputBase, Box, Avatar, Badge } from "@mui/material";
 import { Menu as MenuIcon, Search as SearchIcon, VideoCall as VideoCallIcon, Notifications as NotificationsIcon } from "@mui/icons-material";
 
-const Navbar = () => {
+interface NavbarProps {
+  toggleSidebar: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ toggleSidebar }) => {
   return (
     <AppBar position="fixed" color="default">
-      <Toolbar>
-        {/* Sidebar button */}
-        <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
-        </IconButton>
+      <Toolbar sx={{ justifyContent: "space-between" }}>
+        {/* Burger Icon and Logo */}
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleSidebar}>
+            <MenuIcon />
+          </IconButton>
 
-        {/* Logo */}
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          YouTube DOS
-        </Typography>
+          <Typography variant="h6" noWrap component="div" sx={{ ml: 2 }}>
+            YouTube the 2nd
+          </Typography>
+        </Box>
 
-        {/* Searchbar */}
+        {/* Search Bar */}
         <Box
           sx={{
             position: "relative",
@@ -24,11 +29,11 @@ const Navbar = () => {
             "&:hover": {
               backgroundColor: "#e0e0e0",
             },
-            marginRight: "16px",
             width: "100%",
-            maxWidth: "400px",
+            maxWidth: "600px",
             display: "flex",
             alignItems: "center",
+            mx: "auto",
           }}
         >
           <InputBase
@@ -55,7 +60,7 @@ const Navbar = () => {
             </Badge>
           </IconButton>
           <IconButton color="inherit">
-            <Avatar alt="Profile Picture" src="https://via.placeholder.com/40" />
+            <Avatar alt="Profile Picture" src="https://avatars.githubusercontent.com/u/38518156?v=4" />
           </IconButton>
         </Box>
       </Toolbar>
