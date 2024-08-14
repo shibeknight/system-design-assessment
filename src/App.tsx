@@ -2,17 +2,19 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 import { Container, Typography, Box } from "@mui/material";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ padding: "20px 0" }}>
+    <Box sx={{ display: " flex" }}>
+      <Navbar />
+      <Container maxWidth="lg">
         <Typography variant="h4" component="h1" gutterBottom>
           YouTube Clone
         </Typography>
         {/* Add your components here */}
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 }
 
