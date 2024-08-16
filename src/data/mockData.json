@@ -1,0 +1,123 @@
+[
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/C4C4C4/808080?text=Tech+Video+1",
+      "title": "How AI is Changing the World",
+      "channelName": "Tech Insights",
+      "channelIconUrl": "https://via.placeholder.com/50/C4C4C4/808080?text=TI",
+      "views": 254000,
+      "uploadDate": "2 days ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFCCCC/808080?text=Tech+Video+2",
+      "title": "Top 5 Programming Languages to Learn",
+      "channelName": "Code Academy",
+      "channelIconUrl": "https://via.placeholder.com/50/FFCCCC/808080?text=CA",
+      "views": 98000,
+      "uploadDate": "1 week ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/CCFFCC/808080?text=Tech+Video+3",
+      "title": "The Future of Quantum Computing",
+      "channelName": "Quantum Leap",
+      "channelIconUrl": "https://via.placeholder.com/50/CCFFCC/808080?text=QL",
+      "views": 375000,
+      "uploadDate": "3 days ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFCCCC/808080?text=Tech+Video+4",
+      "title": "Building a Blockchain from Scratch",
+      "channelName": "Crypto Mastery",
+      "channelIconUrl": "https://via.placeholder.com/50/FFCCCC/808080?text=CM",
+      "views": 120000,
+      "uploadDate": "5 days ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFFFCC/808080?text=Tech+Video+5",
+      "title": "10 Tips for Cybersecurity",
+      "channelName": "Security Hub",
+      "channelIconUrl": "https://via.placeholder.com/50/FFFFCC/808080?text=SH",
+      "views": 210000,
+      "uploadDate": "1 month ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/CCE5FF/808080?text=Tech+Video+6",
+      "title": "Understanding Cloud Computing",
+      "channelName": "Cloud Wizards",
+      "channelIconUrl": "https://via.placeholder.com/50/CCE5FF/808080?text=CW",
+      "views": 134000,
+      "uploadDate": "2 weeks ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFD6CC/808080?text=Tech+Video+7",
+      "title": "How to Get Started with Python",
+      "channelName": "Learn to Code",
+      "channelIconUrl": "https://via.placeholder.com/50/FFD6CC/808080?text=LTC",
+      "views": 76000,
+      "uploadDate": "4 days ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFCCCC/808080?text=Tech+Video+8",
+      "title": "The Evolution of Mobile Technology",
+      "channelName": "Mobile Tech",
+      "channelIconUrl": "https://via.placeholder.com/50/FFCCCC/808080?text=MT",
+      "views": 220000,
+      "uploadDate": "3 weeks ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFCCCC/808080?text=Tech+Video+9",
+      "title": "AI vs Machine Learning: What's the Difference?",
+      "channelName": "AI Experts",
+      "channelIconUrl": "https://via.placeholder.com/50/FFCCCC/808080?text=AIE",
+      "views": 158000,
+      "uploadDate": "2 months ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFFFCC/808080?text=Tech+Video+10",
+      "title": "Exploring the Internet of Things (IoT)",
+      "channelName": "Tech Vision",
+      "channelIconUrl": "https://via.placeholder.com/50/FFFFCC/808080?text=TV",
+      "views": 89000,
+      "uploadDate": "1 day ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/C4C4C4/808080?text=Tech+Video+11",
+      "title": "The Rise of 5G Networks",
+      "channelName": "NextGen Tech",
+      "channelIconUrl": "https://via.placeholder.com/50/C4C4C4/808080?text=NGT",
+      "views": 140000,
+      "uploadDate": "3 weeks ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFCCCC/808080?text=Tech+Video+12",
+      "title": "Introduction to Virtual Reality",
+      "channelName": "VR World",
+      "channelIconUrl": "https://via.placeholder.com/50/FFCCCC/808080?text=VRW",
+      "views": 32000,
+      "uploadDate": "5 days ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/CCFFCC/808080?text=Tech+Video+13",
+      "title": "Top Gadgets for 2024",
+      "channelName": "Gadget Guru",
+      "channelIconUrl": "https://via.placeholder.com/50/CCFFCC/808080?text=GG",
+      "views": 276000,
+      "uploadDate": "2 days ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFCCCC/808080?text=Tech+Video+14",
+      "title": "Understanding Big Data",
+      "channelName": "Data Science Hub",
+      "channelIconUrl": "https://via.placeholder.com/50/FFCCCC/808080?text=DSH",
+      "views": 187000,
+      "uploadDate": "1 month ago"
+    },
+    {
+      "thumbnailUrl": "https://via.placeholder.com/300x180/FFFFCC/808080?text=Tech+Video+15",
+      "title": "The Future of Self-Driving Cars",
+      "channelName": "Auto Tech",
+      "channelIconUrl": "https://via.placeholder.com/50/FFFFCC/808080?text=AT",
+      "views": 450000,
+      "uploadDate": "6 days ago"
+    }
+  ]
+  
