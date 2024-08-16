@@ -53,7 +53,7 @@ function App() {
         <Grid container spacing={3} justifyContent={"space-around"}>
           {loading
             ? Array.from(new Array(15)).map((_, index) => (
-                <Grid item key={index} xs={12} sm={12} md={6} lg={4} xl={12}>
+                <Grid item key={index} xs={12} sm={12} md={6} lg={4} xl={3}>
                   <Skeleton variant="rectangular" width={300} height={180} />
                   <Box sx={{ display: "flex", marginTop: 1.5 }}>
                     <Skeleton variant="circular" width={40} height={40} />
@@ -65,7 +65,7 @@ function App() {
                 </Grid>
               ))
             : videos.map((video, index) => (
-                <Grid item key={index} xs={12} sm={12} md={6} lg={4} xl={12}>
+                <Grid item key={index} xs={12} sm={12} md={6} lg={4} xl={3}>
                   <Videothumbnail {...video} />
                 </Grid>
               ))}
