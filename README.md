@@ -1,50 +1,19 @@
-# React + TypeScript + Vite
+# Video-sharing design
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo contains the React application that will serve as the client for the prototype of the video-sharing application. Here is also an outline of the system design including a diagram with technologies and a high-level explanation, and a link to a repo with a prototype API connected to a MongoDB that is currently being fetched by the client to serve as a mockup for the database service. 
 
-Currently, two official plugins are available:
+## System Diagram
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The system diagram found here, [Diagram](https://app.diagrams.net/#G1iKK8QjxlUR86aitEV-ggVAIYHHaApl0B#%7B%22pageId%22%3A%22M-6OnRCHuMgGnKxz0wtq%22%7D), outlines the way the services will interact with each other and with the client, as well as a user path for the two core functionalities of the application.
 
-## Expanding the ESLint configuration
+## Prototype API
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The repository found [Here](https://github.com/shibeknight/database-service) is a very basic example of the API that the client will fetch video metadata from the database service to display in the front page.
 
-- Configure the top-level `parserOptions` property like this:
+## API Specification and documentation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Aside from the specifications provided in the diagram, here is a link to a prototype documentation created in Postman with example requests/responses for the services to be included in the system: [Documentation](https://documenter.getpostman.com/view/6474050/2sA3s9DTub)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## React application
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+The deployed React application can be found [Here](https://notyoutubeagain.netlify.app/), it contains the basic functionality requested with video thumbnails rendered and fetching data from the prototype API. It also includes a feature to favorite videos and save them in localStorage (this is for testing purposes), and a toggle to switch between light and dark mode.
