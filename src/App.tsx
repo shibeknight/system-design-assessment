@@ -22,6 +22,7 @@ function App() {
       const finalData: VideoWithProfile[] = data.map((video) => ({
         ...video,
         userProfilePic: "https://via.placeholder.com/50/FFCCCC/808080?text=CM",
+        thumbnail_url: 'https://via.placeholder.com/300x180?text=Thumbnail',
         views: 1500,
       }));
 
