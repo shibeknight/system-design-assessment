@@ -41,7 +41,7 @@ const Videothumbnail: React.FC<VideoThumbnailProps> = ({
       }}
     >
       <Box component="img" src={thumbnail_url} alt={title} sx={{ width: "100%", borderRadius: "8px" }} />
-      <Box sx={{ display: "flex", marginTop: 1.5 }}>
+      <Box sx={{ display: "flex", marginTop: 1.5, justifyContent: "center", paddingBottom: "10px" }}>
         <Avatar src={userProfilePic} alt={uploaded_by} sx={{ marginRight: 2 }} />
         <Box>
           <Typography variant="subtitle1" sx={{ fontWeight: "bold", color: darkMode ? "#fff" : "#000" }}>

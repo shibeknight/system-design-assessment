@@ -10,7 +10,7 @@ function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [videos, setVideos] = useState<VideoWithProfile[]>([]);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
   const [showFavorites, setShowFavorites] = useState(false);
 
