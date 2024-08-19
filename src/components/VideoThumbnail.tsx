@@ -45,10 +45,10 @@ const Videothumbnail: React.FC<VideoThumbnailProps> = ({
           <Typography variant="subtitle1" sx={{ fontWeight: "bold", color: darkMode ? "#fff" : "#000" }}>
             {title}
           </Typography>
-          <Typography variant="body2" color={darkMode ? "text.secondary" : "text.primary"}>
+          <Typography variant="body2" sx={{ color: darkMode ? "#fff" : "#000" }}>
             {uploaded_by}
           </Typography>
-          <Typography variant="body2" color={darkMode ? "text.secondary" : "text.primary"}>
+          <Typography variant="body2" sx={{ color: darkMode ? "#fff" : "#000" }}>
             {views.toLocaleString()} views • {upload_date}
           </Typography>
           <IconButton onClick={() => onFavorite(video_id)} sx={{ marginLeft: "auto" }}>
