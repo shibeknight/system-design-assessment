@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, Grid, Skeleton } from "@mui/material";
+import { Box, Grid, Skeleton, Button } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Videothumbnail from "./components/VideoThumbnail";
@@ -11,6 +11,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [videos, setVideos] = useState<VideoWithProfile[]>([]);
   const [darkMode, setDarkMode] = useState(true);
+  const [favorites, setFavorites] = useState<Set<string>>(new Set());
+  const [showFavorites, setShowFavorites] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
@@ -41,14 +43,33 @@ function App() {
     }
   }
 
+  const handleFavorite = (video_id: string) => {
+    const updatedFavorites = new Set(favorites);
+    if (updatedFavorites.has(video_id)) {
+      updatedFavorites.delete(video_id);
+    } else {
+      updatedFavorites.add(video_id);
+    }
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(Array.from(updatedFavorites)));
+  };
+
+  const handleShowFavorites = () => {
+    setShowFavorites(!showFavorites);
+  };
+
   useEffect(() => {
+    const savedFavorites = localStorage.getItem("favorites");
+    if (savedFavorites) {
+      setFavorites(new Set(JSON.parse(savedFavorites)));
+    }
     fetchVideos();
   }, []);
 
   return (
     <Box sx={{ display: " flex" }}>
       <Navbar toggleSidebar={toggleSidebar} toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} darkMode={darkMode}/>
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} darkMode={darkMode} />
       <Box
         component="main"
         sx={{
@@ -59,6 +80,9 @@ function App() {
           transition: "margin-left 0.3s ease",
         }}
       >
+        <Button onClick={handleShowFavorites} sx={{ mb: 2 }}>
+          {showFavorites ? "Show All" : "Show Favorites"}
+        </Button>
         {/* Main stuff goes here*/}
         <Grid container spacing={3} justifyContent={"space-around"}>
           {loading
@@ -74,12 +98,13 @@ function App() {
                   </Box>
                 </Grid>
               ))
-            : videos.map((video, index) => (
-                <Grid item key={index} xs={12} sm={12} md={6} lg={4} xl={3}>
-                  {/* <Videothumbnail {...video} /> */}
-                  <Videothumbnail {...video} darkMode={darkMode}/>
-                </Grid>
-              ))}
+            : videos
+                .filter((video) => !showFavorites || favorites.has(video.video_id))
+                .map((video, index) => (
+                  <Grid item key={index} xs={12} sm={12} md={6} lg={4} xl={3}>
+                    <Videothumbnail {...video} darkMode={darkMode} onFavorite={handleFavorite} isFavorite={favorites.has(video.video_id)} />
+                  </Grid>
+                ))}
         </Grid>
       </Box>
     </Box>

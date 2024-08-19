@@ -1,4 +1,5 @@
-import { Box, Typography, Avatar } from "@mui/material";
+import { Box, Typography, Avatar, IconButton } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
 
 interface VideoThumbnailProps {
   thumbnail_url: string;
@@ -8,9 +9,23 @@ interface VideoThumbnailProps {
   views: number;
   upload_date: string;
   darkMode: boolean;
+  video_id: string;
+  onFavorite: (video_id: string) => void;
+  isFavorite: boolean;
 }
 
-const Videothumbnail: React.FC<VideoThumbnailProps> = ({ thumbnail_url, title, uploaded_by, userProfilePic, views, upload_date, darkMode }) => {
+const Videothumbnail: React.FC<VideoThumbnailProps> = ({
+  thumbnail_url,
+  title,
+  uploaded_by,
+  userProfilePic,
+  views,
+  upload_date,
+  darkMode,
+  video_id,
+  onFavorite,
+  isFavorite,
+}) => {
   return (
     <Box
       sx={{
@@ -27,7 +42,7 @@ const Videothumbnail: React.FC<VideoThumbnailProps> = ({ thumbnail_url, title, u
       <Box sx={{ display: "flex", marginTop: 1.5 }}>
         <Avatar src={userProfilePic} alt={uploaded_by} sx={{ marginRight: 2 }} />
         <Box>
-          <Typography variant="subtitle1" sx={{ fontWeight: "bold", color: darkMode ? "#fff" : "#000", }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: "bold", color: darkMode ? "#fff" : "#000" }}>
             {title}
           </Typography>
           <Typography variant="body2" color={darkMode ? "text.secondary" : "text.primary"}>
@@ -36,6 +51,9 @@ const Videothumbnail: React.FC<VideoThumbnailProps> = ({ thumbnail_url, title, u
           <Typography variant="body2" color={darkMode ? "text.secondary" : "text.primary"}>
             {views.toLocaleString()} views • {upload_date}
           </Typography>
+          <IconButton onClick={() => onFavorite(video_id)} sx={{ marginLeft: "auto" }}>
+            {isFavorite ? <Favorite color="error" /> : <FavoriteBorder />}
+          </IconButton>
         </Box>
       </Box>
     </Box>
