@@ -7,7 +7,7 @@ import { Video, VideoWithProfile } from "./types";
 import "./App.css";
 
 function App() {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [videos, setVideos] = useState<VideoWithProfile[]>([]);
   const [darkMode, setDarkMode] = useState(true);

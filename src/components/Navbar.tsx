@@ -16,7 +16,13 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, toggleDarkMode, darkMode }) => {
   return (
-    <AppBar position="fixed" color={darkMode ? "secondary" : "default"}>
+    <AppBar
+      position="fixed"
+      sx={{
+        backgroundColor: darkMode ? "#333" : "#fff",
+        color: darkMode ? "#fff" : "#000",
+      }}
+    >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Burger Icon and Logo */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
