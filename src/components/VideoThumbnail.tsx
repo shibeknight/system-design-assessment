@@ -46,6 +46,9 @@ const Videothumbnail: React.FC<VideoThumbnailProps> = ({
         <Box>
           <Typography variant="subtitle1" sx={{ fontWeight: "bold", color: darkMode ? "#fff" : "#000" }}>
             {title}
+            <IconButton onClick={() => onFavorite(video_id)} sx={{ marginLeft: "1" }}>
+              {isFavorite ? <Favorite color="error" /> : <FavoriteBorder />}
+            </IconButton>
           </Typography>
           <Typography variant="body2" sx={{ color: darkMode ? "#fff" : "#000" }}>
             {uploaded_by}
@@ -53,9 +56,6 @@ const Videothumbnail: React.FC<VideoThumbnailProps> = ({
           <Typography variant="body2" sx={{ color: darkMode ? "#fff" : "#000" }}>
             {views.toLocaleString()} views • {formattedDate}
           </Typography>
-          <IconButton onClick={() => onFavorite(video_id)} sx={{ marginLeft: "auto" }}>
-            {isFavorite ? <Favorite color="error" /> : <FavoriteBorder />}
-          </IconButton>
         </Box>
       </Box>
     </Box>
