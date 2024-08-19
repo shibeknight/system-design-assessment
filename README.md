@@ -4,7 +4,7 @@ This repo contains the React application that will serve as the client for the p
 
 ## System Diagram
 
-The system diagram found here, [Diagram](https://drive.google.com/file/d/1iKK8QjxlUR86aitEV-ggVAIYHHaApl0B/view?usp=sharing), outlines the way the services will interact with each other and with the client, as well as a user path for the two core functionalities of the application.
+The system diagram found here, [Diagram](https://drive.google.com/file/d/11KVu1bSpPrSP15BvDhrI3ehjDTGR9LRy/view?usp=sharing) or [Here](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=videosharing-system-design.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D11KVu1bSpPrSP15BvDhrI3ehjDTGR9LRy%26export%3Ddownload#%7B%22pageId%22%3A%22M-6OnRCHuMgGnKxz0wtq%22%7D), it outlines the way the services will interact with each other and with the client, as well as a user path for the two core functionalities of the application.
 
 ## Prototype API
 
