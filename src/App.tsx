@@ -48,7 +48,7 @@ function App() {
   return (
     <Box sx={{ display: " flex" }}>
       <Navbar toggleSidebar={toggleSidebar} toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} darkMode={darkMode}/>
       <Box
         component="main"
         sx={{
@@ -77,7 +77,7 @@ function App() {
             : videos.map((video, index) => (
                 <Grid item key={index} xs={12} sm={12} md={6} lg={4} xl={3}>
                   {/* <Videothumbnail {...video} /> */}
-                  <Videothumbnail {...video} />
+                  <Videothumbnail {...video} darkMode={darkMode}/>
                 </Grid>
               ))}
         </Grid>

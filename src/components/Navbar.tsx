@@ -1,5 +1,12 @@
 import { AppBar, Toolbar, IconButton, Typography, InputBase, Box, Avatar, Badge, Switch } from "@mui/material";
-import { Menu as MenuIcon, Search as SearchIcon, VideoCall as VideoCallIcon, Notifications as NotificationsIcon } from "@mui/icons-material";
+import {
+  Menu as MenuIcon,
+  Search as SearchIcon,
+  VideoCall as VideoCallIcon,
+  Notifications as NotificationsIcon,
+  Brightness4 as Brightness4Icon,
+  Brightness7 as Brightness7Icon,
+} from "@mui/icons-material";
 
 interface NavbarProps {
   toggleSidebar: () => void;
@@ -9,7 +16,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, toggleDarkMode, darkMode }) => {
   return (
-    <AppBar position="fixed" color={darkMode ? "primary" : "default"}>
+    <AppBar position="fixed" color={darkMode ? "secondary" : "default"}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Burger Icon and Logo */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -66,7 +73,13 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, toggleDarkMode, darkMode
             <Avatar alt="Profile Picture" src="https://avatars.githubusercontent.com/u/38518156?v=4" />
           </IconButton>
           <Box sx={{ ml: 2 }}>
-            <Switch checked={darkMode} onChange={toggleDarkMode} inputProps={{ "aria-label": "dark mode toggle" }} />
+            <Switch
+              checked={darkMode}
+              onChange={toggleDarkMode}
+              inputProps={{ "aria-label": "dark mode toggle" }}
+              icon={<Brightness4Icon />}
+              checkedIcon={<Brightness7Icon />}
+            />
           </Box>
         </Box>
       </Toolbar>

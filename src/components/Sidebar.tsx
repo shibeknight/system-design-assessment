@@ -16,9 +16,10 @@ import {
 interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;
+  darkMode: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar, darkMode }) => {
   return (
     <Drawer
       variant="persistent"
@@ -32,6 +33,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           width: 240,
           boxSizing: "border-box",
           top: "64px",
+          backgroundColor: darkMode ? "#121212" : "#ffffff",
+          color: darkMode ? "#ffffff" : "#000000",
           display: isOpen ? "block" : "none",
         },
       }}
@@ -41,31 +44,31 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         <List>
           <ListItemButton>
             <ListItemIcon>
-              <Home />
+              <Home sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
-              <Whatshot />
+              <Whatshot sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
             </ListItemIcon>
             <ListItemText primary="Shorts" />
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
-              <Subscriptions />
+              <Subscriptions sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
             </ListItemIcon>
             <ListItemText primary="Subscriptions" />
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
-              <MusicNote />
+              <MusicNote sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
             </ListItemIcon>
             <ListItemText primary="Music" />
           </ListItemButton>
         </List>
 
-        <Divider />
+        <Divider sx={{ backgroundColor: darkMode ? "#333" : "#e0e0e0" }} />
 
         {/* Second Section: User */}
         <Box sx={{ p: 2 }}>
@@ -75,44 +78,44 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           <List>
             <ListItemButton>
               <ListItemIcon>
-                <AccountCircle />
+                <AccountCircle sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
               </ListItemIcon>
               <ListItemText primary="You" />
             </ListItemButton>
             <ListItemButton>
               <ListItemIcon>
-                <History />
+                <History sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
               </ListItemIcon>
               <ListItemText primary="History" />
             </ListItemButton>
             <ListItemButton>
               <ListItemIcon>
-                <PlaylistPlay />
+                <PlaylistPlay sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
               </ListItemIcon>
               <ListItemText primary="Playlists" />
             </ListItemButton>
             <ListItemButton>
               <ListItemIcon>
-                <PlayArrow />
+                <PlayArrow sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
               </ListItemIcon>
               <ListItemText primary="My Videos" />
             </ListItemButton>
             <ListItemButton>
               <ListItemIcon>
-                <AccessTime />
+                <AccessTime sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
               </ListItemIcon>
               <ListItemText primary="Watch later" />
             </ListItemButton>
             <ListItemButton>
               <ListItemIcon>
-                <ThumbUp />
+                <ThumbUp sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
               </ListItemIcon>
               <ListItemText primary="Liked videos" />
             </ListItemButton>
           </List>
         </Box>
 
-        <Divider />
+        <Divider sx={{ backgroundColor: darkMode ? "#333" : "#e0e0e0" }}/>
 
         {/* Categories */}
         <Box sx={{ p: 2 }}>
@@ -122,19 +125,19 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           <List>
             <ListItemButton>
               <ListItemIcon>
-                <Whatshot />
+                <Whatshot sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
               </ListItemIcon>
               <ListItemText primary="Trending" />
             </ListItemButton>
             <ListItemButton>
               <ListItemIcon>
-                <MusicNote />
+                <MusicNote sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
               </ListItemIcon>
               <ListItemText primary="Music" />
             </ListItemButton>
             <ListItemButton>
               <ListItemIcon>
-                <VideogameAsset />
+                <VideogameAsset sx={{ color: darkMode ? "#ffffff" : "#000000" }}/>
               </ListItemIcon>
               <ListItemText primary="Gaming" />
             </ListItemButton>
