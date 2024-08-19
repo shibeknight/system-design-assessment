@@ -16,4 +16,4 @@ Aside from the specifications provided in the diagram, here is a link to prototy
 
 ## React application
 
-The deployed React application can be found [Here](https://notyoutubeagain.netlify.app/), it contains the basic functionality requested with video thumbnails rendered and fetching data from the prototype API. It also includes a feature to favorite videos and save them in localStorage (this is for testing purposes), and a toggle to switch between light and dark mode.
+The deployed React application can be found [Here](https://notyoutubeagain.netlify.app/), it contains the basic functionality requested with video thumbnails rendered and fetching data from the prototype API (might take some time for initial load due to the free version of Render deployment). It also includes a feature to favorite videos and save them in localStorage (this is for testing purposes), and a toggle to switch between light and dark mode.
