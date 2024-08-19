@@ -1,5 +1,6 @@
 import { Box, Typography, Avatar, IconButton } from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { format } from "date-fns";
 
 interface VideoThumbnailProps {
   thumbnail_url: string;
@@ -26,6 +27,7 @@ const Videothumbnail: React.FC<VideoThumbnailProps> = ({
   onFavorite,
   isFavorite,
 }) => {
+  const formattedDate = format(new Date(upload_date), "MMM dd, yyyy");
   return (
     <Box
       sx={{
@@ -49,7 +51,7 @@ const Videothumbnail: React.FC<VideoThumbnailProps> = ({
             {uploaded_by}
           </Typography>
           <Typography variant="body2" sx={{ color: darkMode ? "#fff" : "#000" }}>
-            {views.toLocaleString()} views • {upload_date}
+            {views.toLocaleString()} views • {formattedDate}
           </Typography>
           <IconButton onClick={() => onFavorite(video_id)} sx={{ marginLeft: "auto" }}>
             {isFavorite ? <Favorite color="error" /> : <FavoriteBorder />}
