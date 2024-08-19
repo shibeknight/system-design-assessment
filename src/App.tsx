@@ -1,38 +1,40 @@
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
 import { useState, useEffect } from "react";
 import { Box, Grid, Skeleton } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Videothumbnail from "./components/VideoThumbnail";
-import mockData from "./data/mockData.json";
-
-interface Video {
-  thumbnailUrl: string;
-  title: string;
-  channelName: string;
-  channelIconUrl: string;
-  views: number;
-  uploadDate: string;
-}
-
-const mockVideos = mockData as Video[]
+import { Video, VideoWithProfile } from "./types";
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [loading, setLoading] = useState(true);
-  const [videos, setVideos] = useState<Video[]>([]);
+  const [videos, setVideos] = useState<VideoWithProfile[]>([]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setVideos(mockVideos);
+  async function fetchVideos() {
+    try {
+      const response = await fetch("https://database-service-nw0o.onrender.com/metadata/videos");
+      const data: Video[] = await response.json();
+      console.log('data?', data)
+      const finalData: VideoWithProfile[] = data.map((video) => ({
+        ...video,
+        userProfilePic: "https://via.placeholder.com/50/FFCCCC/808080?text=CM",
+        views: 1500,
+      }));
+
+      setVideos(finalData);
       setLoading(false);
-    }, 2000);
+    } catch (error) {
+      console.error("Failed to fetch data ", error);
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchVideos();
   }, []);
 
   return (
@@ -66,6 +68,7 @@ function App() {
               ))
             : videos.map((video, index) => (
                 <Grid item key={index} xs={12} sm={12} md={6} lg={4} xl={3}>
+                  {/* <Videothumbnail {...video} /> */}
                   <Videothumbnail {...video} />
                 </Grid>
               ))}

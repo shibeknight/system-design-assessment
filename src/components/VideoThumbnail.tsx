@@ -1,29 +1,29 @@
 import { Box, Typography, Avatar } from "@mui/material";
 
 interface VideoThumbnailProps {
-  thumbnailUrl: string;
+  thumbnail_url: string;
   title: string;
-  channelName: string;
-  channelIconUrl: string;
+  uploaded_by: string;
+  userProfilePic: string;
   views: number;
-  uploadDate: string;
+  upload_date: string;
 }
 
-const Videothumbnail: React.FC<VideoThumbnailProps> = ({ thumbnailUrl, title, channelName, channelIconUrl, views, uploadDate }) => {
+const Videothumbnail: React.FC<VideoThumbnailProps> = ({ thumbnail_url, title, uploaded_by, userProfilePic, views, upload_date }) => {
   return (
     <Box sx={{ width: 300, cursor: "pointer", marginBottom: 3 }}>
-      <Box component="img" src={thumbnailUrl} alt={title} sx={{ width: "100%", borderRadius: "8px" }} />
+      <Box component="img" src={thumbnail_url} alt={title} sx={{ width: "100%", borderRadius: "8px" }} />
       <Box sx={{ display: "flex", marginTop: 1.5 }}>
-        <Avatar src={channelIconUrl} alt={channelName} sx={{ marginRight: 2 }} />
+        <Avatar src={userProfilePic} alt={uploaded_by} sx={{ marginRight: 2 }} />
         <Box>
           <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {channelName}
+            {uploaded_by}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {views.toLocaleString()} views • {uploadDate}
+            {views.toLocaleString()} views • {upload_date}
           </Typography>
         </Box>
       </Box>
